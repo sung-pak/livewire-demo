@@ -26,7 +26,11 @@
     </head>
 
     <body class="bg-slate-600">
-     <nav class="flex m-6 ml-12 "><div class="w-32 mr-auto justify-between"> <a href="/">home</a> | <a href="/register">register</a> </div></nav>
+      <nav class="flex m-6 ml-12 ">
+        <div class="w-64 mr-auto justify-between text-slate-200"> 
+          <a href="/">home</a> | <a href="/register">register</a> | <a href="/form-elements">form elements</a> 
+        </div>
+      </nav>
         @yield('body')
 
         @livewireScripts

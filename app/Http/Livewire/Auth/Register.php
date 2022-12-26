@@ -8,12 +8,15 @@ use App\Models\User;
 
 class Register extends Component
 {
-    public $title = 'User Form';
+    public $title = 'Register Form';
     public $name;
     public $email;
     public $password;
     //public $passwordConfirmation;
-  
+    
+    public $identity = ['personal'];
+    public $disability = '';
+    public $smoker = 'no';
 
     public function mount(){
         return view('livewire.auth.register')
@@ -22,8 +25,10 @@ class Register extends Component
 
     public function registerio(){
 
-      $this->title = 'User Form';
-      
+      $this->title = 'Register Form';
+
+    //dd( $this->disability, $this->smoker, $this->identity);
+
       $validatedData = $this->validate([
         'name' => 'required|min:4',
         'email' => 'required|email|unique:users',
@@ -36,7 +41,7 @@ class Register extends Component
         'password' => Hash::make($this->password),
       ]);
 
-      $this->title = 'User Form Submit: Success!';
+      $this->title = 'Register Form Submit: Success!';
       $this->name = '';
       $this->email = '';
       $this->password = '';
